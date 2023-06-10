@@ -1,0 +1,10 @@
+@import "~bootstrap/scss/bootstrap";
+
+$primary: darken(#428bca, 20%);
+
+body {
+    background-color: rgb(241, 241, 241);
+    h1{
+        font-size: 70px;
+    }
+}

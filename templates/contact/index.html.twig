@@ -5,9 +5,48 @@
 {% block body %}
 <div class="example-wrapper">
     <h1>Develery Contact</h1>
+
     {% for message in app.flashes('success') %}
-        <div style="color: green">{{ message }}</div>
+        <div class="alert alert-success alert-dismissible fade show" role="alert">
+            Köszönjük szépen a kérdésedet. Válaszunkkal hamarosan keresünk a megadtt e-mail címen.
+            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+        </div>
     {% endfor %}
-    {{ form(form) }}
+
+    {# {{ form(form) }} #}
+    {{ form_start(form) }}
+        <div>{{ form_errors(form) }}</div>
+
+        {# Név #}
+        <div>
+            {{ form_label(form.name, 'Név') }}
+        </div>
+        <div>
+            {{ form_widget(form.name) }}
+        </div>
+
+        {# Email #}
+        <div>
+            {{ form_label(form.email, 'E-mail') }}
+        </div>
+        <div>
+            {{ form_widget(form.email) }}
+        </div>
+
+        {# Üzenet #}
+        <div>
+            {{ form_label(form.message, 'Üzenet') }}
+        </div>
+        <div>
+            {{ form_widget(form.message) }}
+        </div>
+
+        {# Küldés #}
+        <div>
+            <button class="btn btn-success" type="submit">Küldés</button>
+        </div>
+
+    {{ form_end(form) }}
+
 </div>
 {% endblock %}
