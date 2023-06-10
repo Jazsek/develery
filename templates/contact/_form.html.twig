@@ -2,31 +2,25 @@
     <div>{{ form_errors(form) }}</div>
 
     {# Név #}
-    <div>
+    <div class="form-group">
         {{ form_label(form.name, 'Név') }}
-    </div>
-    <div>
         {{ form_widget(form.name) }}
     </div>
 
     {# Email #}
-    <div>
+    <div class="form-group">
         {{ form_label(form.email, 'E-mail') }}
-    </div>
-    <div>
         {{ form_widget(form.email) }}
     </div>
 
     {# Üzenet #}
-    <div>
+    <div class="form-group">
         {{ form_label(form.message, 'Üzenet') }}
-    </div>
-    <div>
         {{ form_widget(form.message) }}
     </div>
 
     {# Küldés #}
     <div>
-        <button class="btn btn-success" type="submit">Küldés</button>
+        <button class="btn btn-lg btn-warning btn-custom w-100 mt-4" type="submit">Küldés</button>
     </div>
 {{ form_end(form) }}

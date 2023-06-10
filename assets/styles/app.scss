@@ -1,10 +1,56 @@
 @import "~bootstrap/scss/bootstrap";
 
-$primary: darken(#428bca, 20%);
+$lightgray: #f2f2f2;
+$darkgray: #4d4d4d;
+$orange: #d9a530;
 
+
+/* overwrite bootstrap class */
+.form-label{
+    margin-bottom: 0.3rem;
+}
+.form-control:focus {   
+    border-color: rgba(219, 184, 0, 0.8);
+    box-shadow: 0 1px 1px rgba(0, 0, 0, 0.075) inset, 0 0 8px rgba(159, 113, 0, 0.6);
+    outline: 0 none;
+}
+
+
+/* Custom class */
+.btn-custom {
+    background-color: $orange;
+}
+
+
+/* Contact page */
 body {
-    background-color: rgb(241, 241, 241);
-    h1{
-        font-size: 70px;
+    background-color: $lightgray;
+    color: $darkgray;
+    .container-contact{
+        .wrap-contact{
+            width: 100%;
+            min-height: 100vh;
+            .contact-form{
+                width: 768px; 
+                label {
+                    font-size: 20px;
+                }
+                .contact-form-title {
+                    span {
+                        color: $orange;
+                    }
+                }
+                .form-group{
+                    margin-bottom: 1rem;
+                }
+            }
+            .contact-image{
+                background-image: url('https://picsum.photos/id/3/1920/1080.webp');
+                width: calc(100% - 768px);
+                background-repeat: no-repeat;
+                background-size: cover;
+                background-position: center;
+            }
+        }
     }
 }

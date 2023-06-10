@@ -3,17 +3,24 @@
 {% block title %}Develery Contact{% endblock %}
 
 {% block body %}
-<div class="example-wrapper">
-    <h1>Develery Contact</h1>
+<div class="container-contact d-flex flex-wrap justify-content-center align-items-center">
+    <div class="wrap-contact d-flex flex-wrap flex-row-reverse align-items-stretch ">
+        <div class="contact-form p-4">
+            <h1 class="contact-form-title text-center mb-4">Devel<span>ery</span> Contact</h1>
 
-    {% for message in app.flashes('success') %}
-        <div class="alert alert-success alert-dismissible fade show" role="alert">
-            Köszönjük szépen a kérdésedet. Válaszunkkal hamarosan keresünk a megadtt e-mail címen.
-            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+            {% for message in app.flashes('success') %}
+                <div class="alert alert-success alert-dismissible fade show" role="alert">
+                    Köszönjük szépen a kérdésedet. Válaszunkkal hamarosan keresünk a megadtt e-mail címen.
+                    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                </div>
+            {% endfor %}
+
+            {{ include('contact/_form.html.twig') }}
+    
         </div>
-    {% endfor %}
-
-    {{ include('contact/_form.html.twig') }}
+        <div class="contact-image d-none d-md-block"></div>
+    </div>
+    
 
 </div>
 {% endblock %}
