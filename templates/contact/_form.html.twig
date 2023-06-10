@@ -1,0 +1,32 @@
+{{ form_start(form) }}
+    <div>{{ form_errors(form) }}</div>
+
+    {# Név #}
+    <div>
+        {{ form_label(form.name, 'Név') }}
+    </div>
+    <div>
+        {{ form_widget(form.name) }}
+    </div>
+
+    {# Email #}
+    <div>
+        {{ form_label(form.email, 'E-mail') }}
+    </div>
+    <div>
+        {{ form_widget(form.email) }}
+    </div>
+
+    {# Üzenet #}
+    <div>
+        {{ form_label(form.message, 'Üzenet') }}
+    </div>
+    <div>
+        {{ form_widget(form.message) }}
+    </div>
+
+    {# Küldés #}
+    <div>
+        <button class="btn btn-success" type="submit">Küldés</button>
+    </div>
+{{ form_end(form) }}
