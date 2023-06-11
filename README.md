@@ -1,5 +1,5 @@
 # Telepítés és futtatás  
-Első lépésként pullolni kell az egész repot.
+Első lépésként pullolni kell az egész repot. Amennyiben szükséges telepíteni kell a symfony CLI-t, hogy a leírásban kiemelt parancsokat tudjuk használni.
 
 ## Adatbázis futtatás:
 Az adatbázis használatához szükség lesz egy docker container futtatására. Ennek előfeltétele, hogy az adott eszközre fel legyen telepítve a docker desktop. Az [alábbi](https://www.docker.com/products/docker-desktop/) oldalról letölthető és telepíthető.  
@@ -8,10 +8,9 @@ Ha fut a docker desktopunk akkor a project root mappájában adjuk ki az indít�
   
 **Fontos!** A `docker-compose.yml` fájlban található egy `platform: linux/arm64/v8` nevű sor. Erre csak akkor van szükséges, ha az adott eszköz amin a container futtatásra kerül az egy M1-es chippel szerelt macbook. Ha más típusú gépről beszélünk, akkor ez nyugodtan commentelhető.
 
-Adatbázis létrehozása: `symfony console doctrine:database:create`
-
+Adatbázis létrehozása: `symfony console doctrine:database:create`  
 Migrációk futtatása: `symfony console doctrine:migrations:migrate`
 
 ## Symfony futtatás:  
-`symfony server:start` *(Bár ezt gyanítom nem kell bemutatnom :) )*  
-`npm run watch` futtatás
+`symfony server:start`  
+`npm run watch`
